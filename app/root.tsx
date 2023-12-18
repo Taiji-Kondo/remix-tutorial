@@ -1,4 +1,4 @@
-import {json, LinksFunction} from "@remix-run/node";
+import {json, LinksFunction, redirect} from "@remix-run/node";
 
 import {
   Form,
@@ -26,7 +26,7 @@ export const loader = async () => {
 
 export const action = async () => {
   const contact = await createEmptyContact();
-  return json({ contact });
+  return redirect(`/contacts/${contact.id}/edit`);
 };
 
 export default function App() {
