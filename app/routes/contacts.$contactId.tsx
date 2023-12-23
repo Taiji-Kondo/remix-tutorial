@@ -1,4 +1,4 @@
-import {Form, useFetcher, useLoaderData} from "@remix-run/react";
+import {Form, Link, useFetcher, useLoaderData} from "@remix-run/react";
 import type { FunctionComponent } from "react";
 
 import {ContactRecord, getContact, updateContact} from "~/data";
@@ -60,6 +60,7 @@ export default function Contact() {
         {contact.notes ? <p>{contact.notes}</p> : null}
 
         <div>
+          {/*<Link to={`/contacts/${contact.id}/edit`}>Edit</Link>*/}
           <Form action="edit">
             <button type="submit">Edit</button>
           </Form>
